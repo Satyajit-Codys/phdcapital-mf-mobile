@@ -7,9 +7,11 @@ import 'package:phdcapital_mf_mobile/modules/login_otp/otp_screen.dart';
 import 'package:phdcapital_mf_mobile/modules/nominee/nominee_screen.dart';
 import 'package:phdcapital_mf_mobile/modules/pan_verification/pan_verification_screen.dart';
 import 'package:phdcapital_mf_mobile/modules/personal_details/personal_details_screen.dart';
+import 'package:phdcapital_mf_mobile/modules/splash/splash_screen.dart';
 import 'package:phdcapital_mf_mobile/modules/welcome/welcome_screen.dart';
 
 class Routes {
+  static const splash = '/splash';
   static const language = '/language';
   static const welcome = '/welcome';
   static const login = "/login";
@@ -23,6 +25,7 @@ class Routes {
 
 class AppPages {
   static final pages = [
+    GetPage(name: Routes.splash, page: () => SplashScreen()),
     GetPage(name: Routes.language, page: () => LanguageScreen()),
     GetPage(name: Routes.welcome, page: () => WelcomeScreen()),
     GetPage(name: Routes.login, page: () => LoginScreen()),

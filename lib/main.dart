@@ -16,7 +16,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       defaultTransition: Transition.fadeIn,
       transitionDuration: const Duration(milliseconds: 300),
-      initialRoute: Routes.language,
+      initialRoute: Routes.splash,
       getPages: AppPages.pages,
       theme: AppTheme.lightTheme,
     );
