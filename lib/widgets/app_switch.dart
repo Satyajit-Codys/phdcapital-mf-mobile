@@ -9,13 +9,30 @@ class AppSwitch extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Switch(
-      value: value,
-      onChanged: onChanged,
-      activeColor: AppColors.white100,
-      activeTrackColor: AppColors.primary500,
-      inactiveThumbColor: AppColors.white100,
-      inactiveTrackColor: AppColors.grey300,
+    return GestureDetector(
+      onTap: () => onChanged?.call(!value),
+      child: AnimatedContainer(
+        duration: const Duration(milliseconds: 200),
+        width: 44,
+        height: 22,
+        padding: const EdgeInsets.all(3),
+        decoration: BoxDecoration(
+          color: value ? AppColors.primary500 : AppColors.grey300,
+          borderRadius: BorderRadius.circular(16),
+        ),
+        child: AnimatedAlign(
+          duration: const Duration(milliseconds: 200),
+          alignment: value ? Alignment.centerRight : Alignment.centerLeft,
+          child: Container(
+            width: 16,
+            height: 16,
+            decoration: const BoxDecoration(
+              color: AppColors.white100,
+              shape: BoxShape.circle,
+            ),
+          ),
+        ),
+      ),
     );
   }
 }

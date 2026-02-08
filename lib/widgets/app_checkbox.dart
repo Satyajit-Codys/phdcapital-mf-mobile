@@ -29,7 +29,7 @@ class AppCheckbox extends StatelessWidget {
         decoration: BoxDecoration(
           color: _backgroundColor,
           borderRadius: BorderRadius.circular(AppRadii.small),
-          border: Border.all(color: _borderColor, width: 2),
+          border: Border.all(color: _borderColor, width: 1),
         ),
         child: value
             ? Center(
@@ -51,9 +51,9 @@ class AppCheckbox extends StatelessWidget {
   }
 
   Color get _borderColor {
-    if (_isDisabled) return AppColors.grey300;
+    if (_isDisabled) return AppColors.grey100;
     if (value) return AppColors.primary500;
-    return AppColors.grey400;
+    return AppColors.grey200;
   }
 }
 

@@ -188,6 +188,14 @@ class AppTextStyles {
     color: AppColors.grey700,
   );
 
+  static TextStyle subtitle = TextStyle(
+    fontFamily: GoogleFonts.urbanist().fontFamily,
+    fontSize: 16,
+    height: 22 / 16,
+    fontWeight: FontWeight.w500,
+    color: AppColors.grey400,
+  );
+
   // B5 - 14px | Line height: 18px
   static TextStyle body5SemiBold = TextStyle(
     fontFamily: GoogleFonts.urbanist().fontFamily,

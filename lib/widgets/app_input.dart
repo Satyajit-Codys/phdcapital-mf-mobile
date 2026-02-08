@@ -5,21 +5,29 @@ import 'package:phdcapital_mf_mobile/core/constants/app_text_styles.dart';
 import 'package:phdcapital_mf_mobile/core/enums/app_input_enum.dart';
 
 class AppInput extends StatelessWidget {
-  final String label;
+  final String? label;
   final String hint;
   final TextEditingController controller;
   final AppInputState state;
   final bool isPassword;
   final Widget? suffixIcon;
+  final ValueChanged<String>? onChanged;
+  final TextInputType? keyboardType;
+  final bool readOnly; // 👈 ADD
+  final VoidCallback? onTap; // 👈 ADD
 
   const AppInput({
     super.key,
-    required this.label,
+    this.label,
     required this.hint,
     required this.controller,
     this.state = AppInputState.normal,
     this.isPassword = false,
     this.suffixIcon,
+    this.onChanged,
+    this.keyboardType,
+    this.readOnly = false, // 👈 ADD
+    this.onTap, // 👈 ADD
   });
 
   OutlineInputBorder get _border {
@@ -51,11 +59,17 @@ class AppInput extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Text(label, style: AppTextStyles.inputLabel),
+        label != null
+            ? Text(label!, style: AppTextStyles.inputLabel)
+            : SizedBox(),
         const SizedBox(height: 6),
         TextField(
           controller: controller,
+          keyboardType: keyboardType,
           obscureText: isPassword,
+          onChanged: onChanged,
+          readOnly: readOnly, // 👈 IMPORTANT
+          onTap: onTap, // 👈 IMPORTANT
           style: AppTextStyles.inputText.copyWith(color: _textColor),
           decoration: InputDecoration(
             hintText: hint,
@@ -65,7 +79,19 @@ class AppInput extends StatelessWidget {
             border: _border,
             enabledBorder: _border,
             focusedBorder: _border,
-            suffixIcon: suffixIcon,
+            suffixIcon: suffixIcon != null
+                ? InkWell(
+                    onTap: onTap, // 👈 calendar clickable
+                    child: Padding(
+                      padding: const EdgeInsets.only(right: 12),
+                      child: suffixIcon,
+                    ),
+                  )
+                : null,
+            suffixIconConstraints: const BoxConstraints(
+              minHeight: 30,
+              minWidth: 30,
+            ),
           ),
         ),
       ],
