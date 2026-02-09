@@ -85,6 +85,7 @@ class NomineeScreen extends StatelessWidget {
                           );
                           return;
                         }
+                        Get.toNamed("/bank-account");
                       }
                     : null,
               ),
@@ -103,11 +104,11 @@ class NomineeScreen extends StatelessWidget {
               const SizedBox(height: 16),
 
               Text(
-                "Step 4 of 5 · Add Nominee",
+                "Step 4 of 6 · Add Nominee",
                 style: AppTextStyles.body5Regular,
               ),
               const SizedBox(height: 12),
-              StepIndicator(current: 4, total: 5),
+              StepIndicator(current: 4, total: 6),
 
               const SizedBox(height: 24),
               Obx(() {

@@ -29,11 +29,11 @@ class PersonalDetailsScreen extends StatelessWidget {
               _backButton(),
               const SizedBox(height: 16),
               Text(
-                "Step 1 of 5 · Personal Information",
+                "Step 1 of 6 · Personal Information",
                 style: AppTextStyles.body5Regular,
               ),
               const SizedBox(height: 12),
-              StepIndicator(current: 1, total: 5),
+              StepIndicator(current: 1, total: 6),
               const SizedBox(height: 24),
               _header(),
               const SizedBox(height: 24),

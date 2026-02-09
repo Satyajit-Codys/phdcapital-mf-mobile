@@ -72,12 +72,12 @@ class PanVerificationScreen extends StatelessWidget {
               const SizedBox(height: 16),
 
               Text(
-                "Step 2 of 5 · PAN Verification",
+                "Step 2 of 6 · PAN Verification",
                 style: AppTextStyles.body5Regular,
               ),
 
               const SizedBox(height: 12),
-              StepIndicator(current: 2, total: 5),
+              StepIndicator(current: 2, total: 6),
 
               const SizedBox(height: 24),
               Text("PAN Verification", style: AppTextStyles.h3SemiBold),

@@ -87,16 +87,15 @@ class AppColors {
 
   // --------------------------------------------------
   // ORANGE / WARNING
-  // --------------------------------------------------
-  static const Color orange950 = Color(0xFF04251A);
-  static const Color orange900 = Color(0xFF053827);
-  static const Color orange800 = Color(0xFF08543A);
-  static const Color orange700 = Color(0xFF0B7551);
-  static const Color orange600 = Color(0xFF0E9567);
-  static const Color orange500 = Color(0xFF10A874);
-  static const Color orange400 = Color(0xFF14D291);
-  static const Color orange300 = Color(0xFF2DEBAB);
-  static const Color orange200 = Color(0xFF5CF0BD);
-  static const Color orange100 = Color(0xFFA2F6D9);
-  static const Color orange50 = Color(0xFFD4FBF0);
+  static const Color orange950 = Color(0xFF4A2B0A);
+  static const Color orange900 = Color(0xFF6B3A0D);
+  static const Color orange800 = Color(0xFF8C4A10);
+  static const Color orange700 = Color(0xFFAD5B13);
+  static const Color orange600 = Color(0xFFCE6C16);
+  static const Color orange500 = Color(0xFFE38B29);
+  static const Color orange400 = Color(0xFFED9F4D);
+  static const Color orange300 = Color(0xFFF3B774);
+  static const Color orange200 = Color(0xFFF8D1A8);
+  static const Color orange100 = Color(0xFFFBE6CF);
+  static const Color orange50 = Color(0xFFFFF1E0);
 }

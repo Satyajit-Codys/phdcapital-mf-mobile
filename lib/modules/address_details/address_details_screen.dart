@@ -56,12 +56,12 @@ class AddressDetailsScreen extends StatelessWidget {
               const SizedBox(height: 16),
 
               Text(
-                "Step 3 of 5 · Address Details",
+                "Step 3 of 6 · Address Details",
                 style: AppTextStyles.body5Regular,
               ),
 
               const SizedBox(height: 12),
-              StepIndicator(current: 3, total: 5),
+              StepIndicator(current: 3, total: 6),
 
               const SizedBox(height: 24),
               Text("Address Details", style: AppTextStyles.h3SemiBold),

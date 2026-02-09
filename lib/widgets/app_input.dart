@@ -72,6 +72,8 @@ class AppInput extends StatelessWidget {
           onTap: onTap, // 👈 IMPORTANT
           style: AppTextStyles.inputText.copyWith(color: _textColor),
           decoration: InputDecoration(
+            filled: readOnly,
+            fillColor: readOnly ? AppColors.grey100 : AppColors.white100,
             hintText: hint,
             hintStyle: AppTextStyles.inputText.copyWith(
               color: AppColors.grey400,

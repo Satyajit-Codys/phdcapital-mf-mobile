@@ -1,5 +1,7 @@
 import 'package:get/get.dart';
 import 'package:phdcapital_mf_mobile/modules/address_details/address_details_screen.dart';
+import 'package:phdcapital_mf_mobile/modules/bank_account/bank_account_screen.dart';
+import 'package:phdcapital_mf_mobile/modules/bank_verification/bank_verification_screen.dart';
 import 'package:phdcapital_mf_mobile/modules/create_pin/create_pin_screen.dart';
 import 'package:phdcapital_mf_mobile/modules/language/language_screen.dart';
 import 'package:phdcapital_mf_mobile/modules/login/login_screen.dart';
@@ -21,6 +23,8 @@ class Routes {
   static const panVerify = "/pan-verify";
   static const addressDetails = "/address-details";
   static const nominee = "/nominee";
+  static const bankAccount = "/bank-account";
+  static const bankVerification = "/bank-verification";
 }
 
 class AppPages {
@@ -35,5 +39,10 @@ class AppPages {
     GetPage(name: Routes.panVerify, page: () => PanVerificationScreen()),
     GetPage(name: Routes.addressDetails, page: () => AddressDetailsScreen()),
     GetPage(name: Routes.nominee, page: () => NomineeScreen()),
+    GetPage(name: Routes.bankAccount, page: () => BankAccountDetailsScreen()),
+    GetPage(
+      name: Routes.bankVerification,
+      page: () => BankVerificationScreen(),
+    ),
   ];
 }
