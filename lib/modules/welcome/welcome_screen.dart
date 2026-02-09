@@ -189,6 +189,7 @@ class WelcomeScreen extends StatelessWidget {
       child: GestureDetector(
         onTap: () {
           // Explore without login
+          Get.toNamed("/home");
         },
         child: Text(
           "Explore without login",

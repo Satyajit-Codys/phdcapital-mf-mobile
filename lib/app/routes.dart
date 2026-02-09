@@ -3,6 +3,7 @@ import 'package:phdcapital_mf_mobile/modules/address_details/address_details_scr
 import 'package:phdcapital_mf_mobile/modules/bank_account/bank_account_screen.dart';
 import 'package:phdcapital_mf_mobile/modules/bank_verification/bank_verification_screen.dart';
 import 'package:phdcapital_mf_mobile/modules/create_pin/create_pin_screen.dart';
+import 'package:phdcapital_mf_mobile/modules/home/home_screen.dart';
 import 'package:phdcapital_mf_mobile/modules/language/language_screen.dart';
 import 'package:phdcapital_mf_mobile/modules/login/login_screen.dart';
 import 'package:phdcapital_mf_mobile/modules/login_otp/otp_screen.dart';
@@ -25,6 +26,8 @@ class Routes {
   static const nominee = "/nominee";
   static const bankAccount = "/bank-account";
   static const bankVerification = "/bank-verification";
+
+  static const home = "/home";
 }
 
 class AppPages {
@@ -44,5 +47,6 @@ class AppPages {
       name: Routes.bankVerification,
       page: () => BankVerificationScreen(),
     ),
+    GetPage(name: Routes.home, page: () => HomeScreen()),
   ];
 }

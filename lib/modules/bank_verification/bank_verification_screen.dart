@@ -30,6 +30,7 @@ class BankVerificationScreen extends StatelessWidget {
             onPressed: controller.status.value == BankVerificationStatus.success
                 ? () {
                     // Navigate to dashboard / next flow
+                    Get.toNamed("/home");
                   }
                 : null,
           ),

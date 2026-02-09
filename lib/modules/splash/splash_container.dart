@@ -9,7 +9,7 @@ class SplashController extends GetxController {
     // 1. Wait for 3 seconds
     Future.delayed(const Duration(seconds: 2), () {
       // 2. Navigate to Get Started and remove Splash from history
-      Get.toNamed("/language");
+      Get.toNamed("/welcome");
     });
   }
 }

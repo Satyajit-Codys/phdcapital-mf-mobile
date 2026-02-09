@@ -163,7 +163,7 @@ class LanguageScreen extends StatelessWidget {
       child: GestureDetector(
         onTap: () {
           // Skip logic
-          Get.toNamed("/bank-account");
+          Get.toNamed("/home");
         },
         child: Text("Skip", style: AppTextStyles.body3SemiBold),
       ),
