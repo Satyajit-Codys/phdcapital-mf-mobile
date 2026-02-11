@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
 import 'package:phdcapital_mf_mobile/core/constants/app_icons.dart';
+import '../../app/routes.dart';
 import '../../core/constants/app_colors.dart';
 import '../../core/constants/app_text_styles.dart';
 import '../../widgets/app_search_box.dart';
@@ -373,7 +374,9 @@ class AllMutualFundsScreen extends StatelessWidget {
                         minimumSize: Size.zero,
                         tapTargetSize: MaterialTapTargetSize.shrinkWrap,
                       ),
-                      onPressed: () {},
+                      onPressed: () {
+                        Get.toNamed(Routes.fundDetails);
+                      },
                       child: Row(
                         mainAxisSize: MainAxisSize.min,
                         children: [

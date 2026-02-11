@@ -6,6 +6,7 @@ import 'package:phdcapital_mf_mobile/modules/all_mutual_funds/all_mutual_funds_s
 import 'package:phdcapital_mf_mobile/modules/bank_account/bank_account_screen.dart';
 import 'package:phdcapital_mf_mobile/modules/bank_verification/bank_verification_screen.dart';
 import 'package:phdcapital_mf_mobile/modules/create_pin/create_pin_screen.dart';
+import 'package:phdcapital_mf_mobile/modules/fund_details/fund_details_screen.dart';
 import 'package:phdcapital_mf_mobile/modules/kyc/kyc_screen.dart';
 import 'package:phdcapital_mf_mobile/modules/kyc_completed/kyc_completed_screen.dart';
 import 'package:phdcapital_mf_mobile/modules/language/language_screen.dart';
@@ -52,6 +53,7 @@ class Routes {
   // HOME
   static const home = "/home";
   static const allMutualFunds = "/all-mutual-funds";
+  static const fundDetails = "/fund-details";
 }
 
 class AppPages {
@@ -90,5 +92,6 @@ class AppPages {
     // HOME
     GetPage(name: Routes.home, page: () => MainNavigationScreen()),
     GetPage(name: Routes.allMutualFunds, page: () => AllMutualFundsScreen()),
+    GetPage(name: Routes.fundDetails, page: () => FundDetailsScreen()),
   ];
 }
