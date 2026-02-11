@@ -11,7 +11,6 @@ class HomeScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: AppColors.white100,
-      bottomNavigationBar: _bottomNav(),
       body: SafeArea(
         child: SingleChildScrollView(
           child: Column(
@@ -436,83 +435,6 @@ class HomeScreen extends StatelessWidget {
             ),
           ),
         ],
-      ),
-    );
-  }
-
-  // ---------------------------------------------------------------------------
-  // BOTTOM NAV
-  // ---------------------------------------------------------------------------
-  Widget _bottomNav() {
-    return BottomNavigationBar(
-      currentIndex: 0,
-      type: BottomNavigationBarType.fixed, // 🔑 IMPORTANT
-      showSelectedLabels: true,
-      showUnselectedLabels: true,
-      selectedItemColor: AppColors.primary500,
-      unselectedItemColor: AppColors.grey400,
-
-      selectedLabelStyle: AppTextStyles.body5Regular,
-      unselectedLabelStyle: AppTextStyles.body5Regular,
-
-      items: [
-        BottomNavigationBarItem(
-          icon: _navIcon("assets/icons/home_icon.svg"),
-          activeIcon: _navIcon(
-            "assets/icons/home_icon.svg",
-            color: AppColors.primary500,
-          ),
-          label: "Home",
-        ),
-        BottomNavigationBarItem(
-          icon: _navIcon("assets/icons/search_icon.svg"),
-          activeIcon: _navIcon(
-            "assets/icons/search_icon.svg",
-            color: AppColors.primary500,
-          ),
-          label: "Search",
-        ),
-        BottomNavigationBarItem(
-          icon: _navIcon("assets/icons/portfolio_icon.svg"),
-          activeIcon: _navIcon(
-            "assets/icons/portfolio_icon.svg",
-            color: AppColors.primary500,
-          ),
-          label: "Portfolio",
-        ),
-        BottomNavigationBarItem(
-          icon: _navIcon("assets/icons/sip_icon.svg"),
-          activeIcon: _navIcon(
-            "assets/icons/sip_icon.svg",
-            color: AppColors.primary500,
-          ),
-          label: "SIP",
-        ),
-        BottomNavigationBarItem(
-          icon: _navIcon("assets/icons/profile_icon.svg"),
-          activeIcon: _navIcon(
-            "assets/icons/profile_icon.svg",
-            color: AppColors.primary500,
-          ),
-          label: "Profile",
-        ),
-      ],
-    );
-  }
-
-  Widget _navIcon(String asset, {Color? color}) {
-    return SizedBox(
-      height: 16, // 👈 controls vertical alignment
-      width: 16,
-      child: Center(
-        child: SvgPicture.asset(
-          asset,
-          height: 22,
-          width: 22,
-          colorFilter: color != null
-              ? ColorFilter.mode(color, BlendMode.srcIn)
-              : null,
-        ),
       ),
     );
   }

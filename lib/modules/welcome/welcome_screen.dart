@@ -138,24 +138,28 @@ class WelcomeScreen extends StatelessWidget {
 
   Widget _termsCheckbox() {
     return Obx(
-      () => Row(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          AppCheckbox(
-            value: controller.agreedToTerms.value,
-            state: controller.agreedToTerms.value
-                ? AppCheckboxState.checked
-                : AppCheckboxState.unchecked,
-            onChanged: (_) => controller.toggleAgreement(),
-          ),
-          const SizedBox(width: 10),
-          Expanded(
-            child: Text(
-              "I understand that mutual fund investments are subject to market risks and I have read and agree to the Terms & Conditions.",
-              style: AppTextStyles.body5Regular,
+      () => GestureDetector(
+        behavior: HitTestBehavior.opaque,
+        onTap: () => controller.toggleAgreement(),
+        child: Row(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            AppCheckbox(
+              value: controller.agreedToTerms.value,
+              state: controller.agreedToTerms.value
+                  ? AppCheckboxState.checked
+                  : AppCheckboxState.unchecked,
+              onChanged: (_) => controller.toggleAgreement(),
             ),
-          ),
-        ],
+            const SizedBox(width: 10),
+            Expanded(
+              child: Text(
+                "I understand that mutual fund investments are subject to market risks and I have read and agree to the Terms & Conditions.",
+                style: AppTextStyles.body5Regular,
+              ),
+            ),
+          ],
+        ),
       ),
     );
   }

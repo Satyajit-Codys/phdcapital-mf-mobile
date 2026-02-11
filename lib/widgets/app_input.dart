@@ -13,8 +13,9 @@ class AppInput extends StatelessWidget {
   final Widget? suffixIcon;
   final ValueChanged<String>? onChanged;
   final TextInputType? keyboardType;
-  final bool readOnly; // 👈 ADD
-  final VoidCallback? onTap; // 👈 ADD
+  final bool readOnly;
+  final VoidCallback? onTap;
+  final int? maxLength;
 
   const AppInput({
     super.key,
@@ -26,8 +27,9 @@ class AppInput extends StatelessWidget {
     this.suffixIcon,
     this.onChanged,
     this.keyboardType,
-    this.readOnly = false, // 👈 ADD
-    this.onTap, // 👈 ADD
+    this.readOnly = false,
+    this.onTap,
+    this.maxLength,
   });
 
   OutlineInputBorder get _border {
@@ -64,14 +66,16 @@ class AppInput extends StatelessWidget {
             : SizedBox(),
         const SizedBox(height: 6),
         TextField(
+          maxLength: maxLength,
           controller: controller,
           keyboardType: keyboardType,
           obscureText: isPassword,
           onChanged: onChanged,
-          readOnly: readOnly, // 👈 IMPORTANT
-          onTap: onTap, // 👈 IMPORTANT
+          readOnly: readOnly,
+          onTap: onTap,
           style: AppTextStyles.inputText.copyWith(color: _textColor),
           decoration: InputDecoration(
+            counterText: "",
             filled: readOnly,
             fillColor: readOnly ? AppColors.grey100 : AppColors.white100,
             hintText: hint,
