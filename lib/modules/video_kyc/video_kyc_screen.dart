@@ -1,3 +1,5 @@
+// ignore_for_file: deprecated_member_use
+
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:camera/camera.dart';
@@ -337,34 +339,6 @@ class VideoKycScreen extends StatelessWidget {
           borderRadius: BorderRadius.circular(12),
         ),
         child: const Icon(Icons.arrow_back_ios_new, size: 18),
-      ),
-    );
-  }
-
-  // --------------------------------------------------
-  // PROFILE CIRCLE PLACEHOLDER
-  // --------------------------------------------------
-  Widget _profileCirclePlaceholder() {
-    return Center(
-      child: SizedBox(
-        width: 240,
-        height: 240,
-        child: DashedCircleBorder(
-          size: 240,
-          color: AppColors.grey300,
-          strokeWidth: 2,
-          child: Container(
-            decoration: const BoxDecoration(
-              shape: BoxShape.circle,
-              color: AppColors.grey50,
-            ),
-            child: const Icon(
-              Icons.person,
-              size: 100,
-              color: AppColors.grey300,
-            ),
-          ),
-        ),
       ),
     );
   }

@@ -33,8 +33,9 @@ class VideoKycController extends GetxController {
   }
 
   Future<void> startRecording() async {
-    if (cameraController == null || !cameraController!.value.isInitialized)
+    if (cameraController == null || !cameraController!.value.isInitialized) {
       return;
+    }
 
     await cameraController!.startVideoRecording();
     isRecording.value = true;
@@ -58,8 +59,6 @@ class VideoKycController extends GetxController {
     isCameraInitialized.value = false;
     cameraController?.dispose();
     cameraController = null;
-
-    // TODO: Upload API
     Get.snackbar("Success", "Video captured successfully");
   }
 

@@ -63,7 +63,7 @@ class AppDropdown<T> extends StatelessWidget {
           child: ListView.separated(
             shrinkWrap: true,
             itemCount: values.length,
-            separatorBuilder: (_, __) => const Divider(height: 1),
+            separatorBuilder: (_, _) => const Divider(height: 1),
             itemBuilder: (_, index) {
               final item = values[index];
               final isSelected = item == value;

@@ -60,7 +60,7 @@ class LanguageScreen extends StatelessWidget {
   Widget _languageList() {
     return ListView.separated(
       itemCount: controller.languages.length,
-      separatorBuilder: (_, __) => const SizedBox(height: 12),
+      separatorBuilder: (_, _) => const SizedBox(height: 12),
       itemBuilder: (context, index) {
         final item = controller.languages[index];
 

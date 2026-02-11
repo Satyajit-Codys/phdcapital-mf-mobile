@@ -1,3 +1,5 @@
+// ignore_for_file: deprecated_member_use
+
 import 'package:flutter/material.dart';
 import 'package:phdcapital_mf_mobile/core/constants/app_colors.dart';
 import 'package:phdcapital_mf_mobile/core/constants/app_radii.dart';
@@ -55,7 +57,7 @@ class AppButton extends StatelessWidget {
           ),
         ),
         backgroundColor: WidgetStateProperty.resolveWith<Color>((states) {
-          if (states.contains(MaterialState.disabled)) {
+          if (states.contains(WidgetState.disabled)) {
             return AppColors.primary100; // ✅ purple disabled
           }
           return AppColors.primary500;

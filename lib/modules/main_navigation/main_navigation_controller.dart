@@ -1,11 +1,12 @@
+import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 class MainNavigationController extends GetxController {
   final RxInt currentIndex = 0.obs;
 
   void changeTab(int index) {
-    print('Changing tab to: $index'); // Debug
+    debugPrint('Changing tab to: $index'); // Debug
     currentIndex.value = index;
-    print('Current index is now: ${currentIndex.value}'); // Debug
+    debugPrint('Current index is now: ${currentIndex.value}'); // Debug
   }
 }

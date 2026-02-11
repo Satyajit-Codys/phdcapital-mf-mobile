@@ -30,7 +30,6 @@ class AadhaarOtpScreen extends StatelessWidget {
                 : AppButtonState.disabled,
             onPressed: controller.isFormValid.value
                 ? () {
-                    // TODO: verify OTP API
                     Get.toNamed("/upload-documents");
                   }
                 : null,

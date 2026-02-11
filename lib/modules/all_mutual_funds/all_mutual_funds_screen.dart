@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
 import 'package:phdcapital_mf_mobile/core/constants/app_icons.dart';
 import '../../app/routes.dart';
@@ -211,7 +210,7 @@ class AllMutualFundsScreen extends StatelessWidget {
       return ListView.separated(
         padding: const EdgeInsets.fromLTRB(20, 0, 20, 24),
         itemCount: controller.filteredFunds.length,
-        separatorBuilder: (_, __) => const SizedBox(height: 12),
+        separatorBuilder: (_, _) => const SizedBox(height: 12),
         itemBuilder: (context, index) {
           final fund = controller.filteredFunds[index];
           return _fundCard(fund);

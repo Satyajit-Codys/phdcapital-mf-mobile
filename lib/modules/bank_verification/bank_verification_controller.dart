@@ -26,8 +26,6 @@ class BankVerificationController extends GetxController {
 
     final accNo = args["accountNumber"] as String;
     accountNoMasked = _maskAccountNumber(accNo);
-
-    // TODO: call verification API here
   }
 
   void _startVerification() {
