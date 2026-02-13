@@ -18,29 +18,35 @@ class PersonalDetailsScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: AppColors.white100,
-      body: SafeArea(
-        child: SingleChildScrollView(
-          padding: const EdgeInsets.fromLTRB(20, 16, 20, 24),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              _backButton(),
-              const SizedBox(height: 16),
-              Text(
-                "Step 1 of 6 · Personal Information",
-                style: AppTextStyles.body5Regular,
-              ),
-              const SizedBox(height: 12),
-              StepIndicator(current: 1, total: 6),
-              const SizedBox(height: 24),
-              _header(),
-              const SizedBox(height: 24),
-              _form(context),
-              const SizedBox(height: 32),
-              _continueButton(),
-            ],
+    return GestureDetector(
+      behavior: HitTestBehavior.translucent,
+      onTap: () {
+        FocusManager.instance.primaryFocus?.unfocus();
+      },
+      child: Scaffold(
+        backgroundColor: AppColors.white100,
+        body: SafeArea(
+          child: SingleChildScrollView(
+            padding: const EdgeInsets.fromLTRB(20, 16, 20, 24),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                _backButton(),
+                const SizedBox(height: 16),
+                Text(
+                  "Step 1 of 6 · Personal Information",
+                  style: AppTextStyles.body5Regular,
+                ),
+                const SizedBox(height: 12),
+                StepIndicator(current: 1, total: 6),
+                const SizedBox(height: 24),
+                _header(),
+                const SizedBox(height: 24),
+                _form(context),
+                const SizedBox(height: 32),
+                _continueButton(),
+              ],
+            ),
           ),
         ),
       ),
@@ -108,7 +114,7 @@ class PersonalDetailsScreen extends StatelessWidget {
           label: "Date of Birth",
           hint: "dd-mm-yyyy",
           controller: controller.dobController,
-          readOnly: true, // 👈 IMPORTANT
+          readOnly: false, // 👈 IMPORTANT
           onTap: () async {
             final now = DateTime.now();
 

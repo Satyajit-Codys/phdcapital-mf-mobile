@@ -63,7 +63,7 @@ class CreatePinScreen extends StatelessWidget {
                       : AppButtonState.disabled,
                   onPressed: controller.isPinValid.value
                       ? () {
-                          Get.toNamed("/personal-details");
+                          Get.toNamed("/terms-consent");
                         }
                       : null,
                 ),

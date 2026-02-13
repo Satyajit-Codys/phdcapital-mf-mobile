@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:get/get.dart';
 import 'package:phdcapital_mf_mobile/core/enums/app_button_enum.dart';
 import 'package:phdcapital_mf_mobile/widgets/app_button.dart';
@@ -16,6 +17,8 @@ class WelcomeScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    // Set status bar to transparent with dark icons
+
     return Scaffold(
       backgroundColor: AppColors.white100,
       body: SafeArea(

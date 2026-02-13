@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
+import 'package:phdcapital_mf_mobile/modules/profile/profile_screen.dart';
 import '../../core/constants/app_colors.dart';
 import '../../core/constants/app_text_styles.dart';
 import '../home/home_screen.dart';
@@ -18,7 +19,7 @@ class MainNavigationScreen extends StatelessWidget {
     AllMutualFundsScreen(),
     const _PlaceholderScreen(title: "Portfolio"),
     const _PlaceholderScreen(title: "SIP"),
-    const _PlaceholderScreen(title: "Profile"),
+    const ProfileScreen(),
   ];
 
   @override

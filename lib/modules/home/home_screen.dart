@@ -1,6 +1,7 @@
 // ignore_for_file: deprecated_member_use
 
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_svg/svg.dart';
 import '../../core/constants/app_colors.dart';
 import '../../core/constants/app_text_styles.dart';
@@ -11,6 +12,14 @@ class HomeScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    // Set status bar color
+    SystemChrome.setSystemUIOverlayStyle(
+      SystemUiOverlayStyle(
+        statusBarColor: AppColors.primary50,
+        statusBarIconBrightness: Brightness.dark,
+      ),
+    );
+
     return Scaffold(
       backgroundColor: AppColors.white100,
       body: SafeArea(

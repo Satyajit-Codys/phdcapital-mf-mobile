@@ -5,8 +5,11 @@ import 'package:phdcapital_mf_mobile/modules/address_details/address_details_scr
 import 'package:phdcapital_mf_mobile/modules/all_mutual_funds/all_mutual_funds_screen.dart';
 import 'package:phdcapital_mf_mobile/modules/bank_account/bank_account_screen.dart';
 import 'package:phdcapital_mf_mobile/modules/bank_verification/bank_verification_screen.dart';
+import 'package:phdcapital_mf_mobile/modules/compare_funds/compare_funds_screen.dart';
 import 'package:phdcapital_mf_mobile/modules/create_pin/create_pin_screen.dart';
 import 'package:phdcapital_mf_mobile/modules/fund_details/fund_details_screen.dart';
+import 'package:phdcapital_mf_mobile/modules/investment_failed/investment_failed_screen.dart';
+import 'package:phdcapital_mf_mobile/modules/investment_success/investment_success_screen.dart';
 import 'package:phdcapital_mf_mobile/modules/kyc/kyc_screen.dart';
 import 'package:phdcapital_mf_mobile/modules/kyc_completed/kyc_completed_screen.dart';
 import 'package:phdcapital_mf_mobile/modules/language/language_screen.dart';
@@ -15,8 +18,16 @@ import 'package:phdcapital_mf_mobile/modules/login_otp/otp_screen.dart';
 import 'package:phdcapital_mf_mobile/modules/main_navigation/main_navigation_screen.dart';
 import 'package:phdcapital_mf_mobile/modules/nominee/nominee_screen.dart';
 import 'package:phdcapital_mf_mobile/modules/pan_verification/pan_verification_screen.dart';
+import 'package:phdcapital_mf_mobile/modules/payment/payment_screen.dart';
+import 'package:phdcapital_mf_mobile/modules/payment_processing/payment_processing_screen.dart';
 import 'package:phdcapital_mf_mobile/modules/personal_details/personal_details_screen.dart';
+import 'package:phdcapital_mf_mobile/modules/profile/profile_screen.dart';
+import 'package:phdcapital_mf_mobile/modules/risk_assessment/risk_assessment_screen.dart';
+import 'package:phdcapital_mf_mobile/modules/risk_profile/risk_profile_screen.dart';
+import 'package:phdcapital_mf_mobile/modules/financial_goal/financial_goal_screen.dart';
+import 'package:phdcapital_mf_mobile/modules/sip_invest/sip_invest_screen.dart';
 import 'package:phdcapital_mf_mobile/modules/splash/splash_screen.dart';
+import 'package:phdcapital_mf_mobile/modules/terms_consent/terms_consent_screen.dart';
 import 'package:phdcapital_mf_mobile/modules/upload_documents/upload_documents_screen.dart';
 import 'package:phdcapital_mf_mobile/modules/video_kyc/video_kyc_screen.dart';
 import 'package:phdcapital_mf_mobile/modules/welcome/welcome_screen.dart';
@@ -41,6 +52,10 @@ class Routes {
   static const nominee = "/nominee";
   static const bankAccount = "/bank-account";
   static const bankVerification = "/bank-verification";
+  static const termsConsent = "/terms-consent";
+  static const riskAssessment = "/risk-assessment";
+  static const riskProfile = "/risk-profile";
+  static const financialGoal = "/financial-goal";
 
   // KYC
   static const kyc = "/kyc";
@@ -52,8 +67,19 @@ class Routes {
 
   // HOME
   static const home = "/home";
+
+  // MUTUAL FUNDS
   static const allMutualFunds = "/all-mutual-funds";
   static const fundDetails = "/fund-details";
+  static const compareFunds = "/compare-funds";
+  static const sipInvest = "/sip-invest";
+  static const payment = "/payment";
+  static const paymentProcessing = "/payment-processing";
+  static const investmentSuccess = "/investment-success";
+  static const investmentFailed = "/investment-failed";
+
+  // PROFILE
+  static const profile = "/profile";
 }
 
 class AppPages {
@@ -80,6 +106,10 @@ class AppPages {
       name: Routes.bankVerification,
       page: () => BankVerificationScreen(),
     ),
+    GetPage(name: Routes.termsConsent, page: () => TermsConsentScreen()),
+    GetPage(name: Routes.riskAssessment, page: () => RiskAssessmentScreen()),
+    GetPage(name: Routes.riskProfile, page: () => RiskProfileScreen()),
+    GetPage(name: Routes.financialGoal, page: () => FinancialGoalScreen()),
 
     // KYC
     GetPage(name: Routes.kyc, page: () => KycVerificationScreen()),
@@ -91,7 +121,27 @@ class AppPages {
 
     // HOME
     GetPage(name: Routes.home, page: () => MainNavigationScreen()),
+
+    // MUTUAL FUNDS
     GetPage(name: Routes.allMutualFunds, page: () => AllMutualFundsScreen()),
     GetPage(name: Routes.fundDetails, page: () => FundDetailsScreen()),
+    GetPage(name: Routes.compareFunds, page: () => CompareFundsScreen()),
+    GetPage(name: Routes.sipInvest, page: () => SipInvestScreen()),
+    GetPage(name: Routes.payment, page: () => PaymentScreen()),
+    GetPage(
+      name: Routes.paymentProcessing,
+      page: () => const PaymentProcessingScreen(),
+    ),
+    GetPage(
+      name: Routes.investmentSuccess,
+      page: () => const InvestmentSuccessScreen(),
+    ),
+    GetPage(
+      name: Routes.investmentFailed,
+      page: () => const InvestmentFailedScreen(),
+    ),
+
+    // PROFILE
+    GetPage(name: Routes.profile, page: () => const ProfileScreen()),
   ];
 }

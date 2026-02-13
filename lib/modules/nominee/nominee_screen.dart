@@ -248,7 +248,7 @@ class NomineeScreen extends StatelessWidget {
                 label: "Date of Birth",
                 hint: "dd-mm-yyyy",
                 controller: controller.dobController,
-                readOnly: true,
+                readOnly: false,
                 onTap: () async {
                   final now = DateTime.now();
 
