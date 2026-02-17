@@ -4,6 +4,7 @@ enum AppButtonVariant {
   dashed, // Dashed Outline
   text, // Text
   link, // Link style
+  cancel,
 }
 
 enum AppButtonState { enabled, disabled }

@@ -26,6 +26,14 @@ import 'package:phdcapital_mf_mobile/modules/risk_assessment/risk_assessment_scr
 import 'package:phdcapital_mf_mobile/modules/risk_profile/risk_profile_screen.dart';
 import 'package:phdcapital_mf_mobile/modules/financial_goal/financial_goal_screen.dart';
 import 'package:phdcapital_mf_mobile/modules/sip_invest/sip_invest_screen.dart';
+import 'package:phdcapital_mf_mobile/modules/sip/sip_screen.dart';
+import 'package:phdcapital_mf_mobile/modules/sip_details/sip_details_screen.dart';
+import 'package:phdcapital_mf_mobile/modules/switch_funds/switch_funds_screen.dart';
+import 'package:phdcapital_mf_mobile/modules/redeem_sip/redeem_sip_screen.dart';
+import 'package:phdcapital_mf_mobile/modules/stepup_sip/stepup_sip_screen.dart';
+import 'package:phdcapital_mf_mobile/modules/pause_sip_request/pause_sip_request_screen.dart';
+import 'package:phdcapital_mf_mobile/modules/redeem_request/redeem_request_screen.dart';
+import 'package:phdcapital_mf_mobile/modules/stepup_sip_request/stepup_sip_request_screen.dart';
 import 'package:phdcapital_mf_mobile/modules/splash/splash_screen.dart';
 import 'package:phdcapital_mf_mobile/modules/terms_consent/terms_consent_screen.dart';
 import 'package:phdcapital_mf_mobile/modules/upload_documents/upload_documents_screen.dart';
@@ -80,6 +88,16 @@ class Routes {
 
   // PROFILE
   static const profile = "/profile";
+
+  // SIP MANAGEMENT
+  static const sip = "/sip";
+  static const sipDetails = "/sip-details";
+  static const switchFunds = "/switch-funds";
+  static const redeemSip = "/redeem-sip";
+  static const stepupSip = "/stepup-sip";
+  static const pauseSipRequest = "/pause-sip-request";
+  static const redeemRequest = "/redeem-request";
+  static const stepupSipRequest = "/stepup-sip-request";
 }
 
 class AppPages {
@@ -143,5 +161,24 @@ class AppPages {
 
     // PROFILE
     GetPage(name: Routes.profile, page: () => const ProfileScreen()),
+
+    // SIP MANAGEMENT
+    GetPage(name: Routes.sip, page: () => SipScreen()),
+    GetPage(name: Routes.sipDetails, page: () => SipDetailsScreen()),
+    GetPage(name: Routes.switchFunds, page: () => const SwitchFundsScreen()),
+    GetPage(name: Routes.redeemSip, page: () => const RedeemSipScreen()),
+    GetPage(name: Routes.stepupSip, page: () => const StepupSipScreen()),
+    GetPage(
+      name: Routes.pauseSipRequest,
+      page: () => const PauseSipRequestScreen(),
+    ),
+    GetPage(
+      name: Routes.redeemRequest,
+      page: () => const RedeemRequestScreen(),
+    ),
+    GetPage(
+      name: Routes.stepupSipRequest,
+      page: () => const StepupSipRequestScreen(),
+    ),
   ];
 }

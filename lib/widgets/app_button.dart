@@ -37,6 +37,9 @@ class AppButton extends StatelessWidget {
       case AppButtonVariant.secondary:
         return _outlineButton();
 
+      case AppButtonVariant.cancel:
+        return _cancelButton();
+
       default:
         return _filledButton();
     }
@@ -61,6 +64,39 @@ class AppButton extends StatelessWidget {
             return AppColors.primary100; // ✅ purple disabled
           }
           return AppColors.primary500;
+        }),
+        foregroundColor: WidgetStateProperty.all(AppColors.white100),
+        elevation: WidgetStateProperty.all(0),
+        overlayColor: WidgetStateProperty.resolveWith<Color?>((states) {
+          if (states.contains(WidgetState.pressed)) {
+            return AppColors.white100.withOpacity(0.12); // subtle flash
+          }
+          return null;
+        }),
+      ),
+      child: Text(title, style: AppTextStyles.buttonMedium),
+    );
+  }
+
+  // --------------------------------------------------
+  // FILLED
+  // --------------------------------------------------
+
+  Widget _cancelButton() {
+    return ElevatedButton(
+      onPressed: _isDisabled ? null : onPressed,
+      style: ButtonStyle(
+        minimumSize: WidgetStateProperty.all(const Size(double.infinity, 50)),
+        shape: WidgetStateProperty.all(
+          RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(AppRadii.medium),
+          ),
+        ),
+        backgroundColor: WidgetStateProperty.resolveWith<Color>((states) {
+          if (states.contains(WidgetState.disabled)) {
+            return AppColors.red100; // ✅ purple disabled
+          }
+          return AppColors.red500;
         }),
         foregroundColor: WidgetStateProperty.all(AppColors.white100),
         elevation: WidgetStateProperty.all(0),

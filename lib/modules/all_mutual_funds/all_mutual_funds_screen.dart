@@ -6,6 +6,7 @@ import '../../core/constants/app_colors.dart';
 import '../../core/constants/app_text_styles.dart';
 import '../../widgets/app_search_box.dart';
 import 'all_mutual_funds_controller.dart';
+import 'widgets/filter_bottom_sheet.dart';
 
 class AllMutualFundsScreen extends StatelessWidget {
   AllMutualFundsScreen({super.key});
@@ -37,7 +38,17 @@ class AllMutualFundsScreen extends StatelessWidget {
                   Align(
                     alignment: Alignment.centerRight,
                     child: InkWell(
-                      onTap: () {},
+                      onTap: () {
+                        showModalBottomSheet(
+                          context: context,
+                          isScrollControlled: true,
+                          backgroundColor: Colors.transparent,
+                          builder: (context) => SizedBox(
+                            height: MediaQuery.of(context).size.height * 0.65,
+                            child: const FilterBottomSheet(),
+                          ),
+                        );
+                      },
                       child: Container(
                         height: 40,
                         width: 40,
@@ -69,6 +80,76 @@ class AllMutualFundsScreen extends StatelessWidget {
             ),
 
             Divider(height: 1, thickness: 4, color: AppColors.grey50),
+
+            // Active Filters
+            Obx(() {
+              final activeFilters = controller.getActiveFilters();
+              if (activeFilters.isEmpty) {
+                return const SizedBox.shrink();
+              }
+              return Align(
+                alignment: Alignment.topLeft,
+                child: Container(
+                  padding: const EdgeInsets.symmetric(
+                    horizontal: 16,
+                    vertical: 12,
+                  ),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(
+                        "Active Filters",
+                        style: AppTextStyles.body5SemiBold.copyWith(
+                          color: AppColors.grey600,
+                        ),
+                      ),
+                      const SizedBox(height: 8),
+                      Wrap(
+                        spacing: 8,
+                        runSpacing: 8,
+                        alignment: WrapAlignment.start,
+                        children: activeFilters.map((filter) {
+                          return Container(
+                            padding: const EdgeInsets.symmetric(
+                              horizontal: 12,
+                              vertical: 8,
+                            ),
+                            decoration: BoxDecoration(
+                              color: AppColors.primary50,
+                              borderRadius: BorderRadius.circular(20),
+                              border: Border.all(
+                                color: AppColors.primary500,
+                                width: 1,
+                              ),
+                            ),
+                            child: Row(
+                              mainAxisSize: MainAxisSize.min,
+                              children: [
+                                Text(
+                                  filter,
+                                  style: AppTextStyles.body5Regular.copyWith(
+                                    color: AppColors.primary500,
+                                  ),
+                                ),
+                                const SizedBox(width: 6),
+                                InkWell(
+                                  onTap: () => controller.removeFilter(filter),
+                                  child: const Icon(
+                                    Icons.close,
+                                    size: 16,
+                                    color: AppColors.primary500,
+                                  ),
+                                ),
+                              ],
+                            ),
+                          );
+                        }).toList(),
+                      ),
+                    ],
+                  ),
+                ),
+              );
+            }),
 
             SizedBox(height: 12),
 
@@ -197,7 +278,7 @@ class AllMutualFundsScreen extends StatelessWidget {
               ),
               const SizedBox(height: 8),
               Text(
-                "Try searching with different keywords",
+                "Try adjusting your filters",
                 style: AppTextStyles.body5Regular.copyWith(
                   color: AppColors.grey400,
                 ),
@@ -207,14 +288,35 @@ class AllMutualFundsScreen extends StatelessWidget {
         );
       }
 
-      return ListView.separated(
-        padding: const EdgeInsets.fromLTRB(20, 0, 20, 24),
-        itemCount: controller.filteredFunds.length,
-        separatorBuilder: (_, _) => const SizedBox(height: 12),
-        itemBuilder: (context, index) {
-          final fund = controller.filteredFunds[index];
-          return _fundCard(fund);
-        },
+      return SingleChildScrollView(
+        padding: const EdgeInsets.fromLTRB(0, 0, 0, 24),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            // Explore Mutual Funds
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 16.0),
+              child: Text(
+                "Explore Mutual Funds",
+                style: AppTextStyles.h5SemiBold,
+              ),
+            ),
+            const SizedBox(height: 16),
+
+            ListView.builder(
+              shrinkWrap: true,
+              physics: const NeverScrollableScrollPhysics(),
+              itemCount: controller.filteredFunds.length,
+              itemBuilder: (context, index) {
+                final fund = controller.filteredFunds[index];
+                return Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 16.0),
+                  child: _fundCard(fund),
+                );
+              },
+            ),
+          ],
+        ),
       );
     });
   }

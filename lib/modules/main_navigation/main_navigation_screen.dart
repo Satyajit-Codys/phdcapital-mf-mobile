@@ -6,6 +6,7 @@ import '../../core/constants/app_colors.dart';
 import '../../core/constants/app_text_styles.dart';
 import '../home/home_screen.dart';
 import '../all_mutual_funds/all_mutual_funds_screen.dart';
+import '../sip/sip_screen.dart';
 import 'main_navigation_controller.dart';
 
 class MainNavigationScreen extends StatelessWidget {
@@ -18,7 +19,7 @@ class MainNavigationScreen extends StatelessWidget {
     const HomeScreen(),
     AllMutualFundsScreen(),
     const _PlaceholderScreen(title: "Portfolio"),
-    const _PlaceholderScreen(title: "SIP"),
+    SipScreen(),
     const ProfileScreen(),
   ];
 
